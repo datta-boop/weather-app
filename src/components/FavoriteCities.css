@@ -1,0 +1,64 @@
+.favorites-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  max-width: 900px;
+  padding: 0.4rem 1rem;
+  overflow: hidden;
+}
+
+.favorites-star-icon {
+  color: #ffd700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.favorites-scroll {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.favorites-scroll::-webkit-scrollbar { display: none; }
+
+.favorite-chip {
+  display: flex;
+  align-items: center;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 50px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  transition: border-color 0.2s;
+  flex-shrink: 0;
+}
+.favorite-chip.active { border-color: var(--weather-primary); }
+
+.chip-name {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 0.82rem;
+  font-weight: 500;
+  font-family: inherit;
+  padding: 0.3rem 0.7rem 0.3rem 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s;
+}
+.chip-name:hover { color: var(--weather-primary); }
+
+.chip-remove {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.65rem;
+  padding: 0.3rem 0.5rem 0.3rem 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s;
+}
+.chip-remove:hover { color: #e17055; }

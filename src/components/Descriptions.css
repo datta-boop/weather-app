@@ -1,64 +1,54 @@
-.details-section {
+.descriptions-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
-  width: 800px;
-  padding: 1rem;
-
-  color: white;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  width: 100%;
 }
 
-.card {
+.desc-card {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-left: 3px solid var(--card-accent, var(--weather-primary));
+  border-radius: 16px;
+  padding: 0.9rem 1rem;
+  backdrop-filter: blur(15px);
+  transition: transform 0.2s, background 0.2s;
+}
+.desc-card:hover { transform: translateY(-2px); background: var(--btn-hover); }
+
+.desc-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.desc-info {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--section-overlay);
-  padding: 1rem 2rem;
-  border-radius: 0.8rem;
+  gap: 0.1rem;
 }
 
-.card:hover {
-  border: 0.25rem;
-  border-style: solid;
-  border-color: white;
-  padding: 0.75rem 1.75rem;
+.desc-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
 }
 
-.description__card-icon {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  margin-bottom: 10px;
+.desc-data {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
-h2 {
-  font-size: 1.5rem;
+@media (max-width: 768px) {
+  .descriptions-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-.description__card-icon > small {
-  text-transform: capitalize;
-}
-
-@media screen and (max-width: 1024px) {
-  .details-section {
-    grid-template-columns: 1fr 1fr;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    gap: 0.5rem;
-  }
-
-  .card {
-    padding: 0.5rem 0.5rem;
-  }
-  .card:hover {
-    border: 0.25rem;
-    border-style: solid;
-    border-color: white;
-    padding: 0.25rem 0.25rem;
-  }
+@media (max-width: 400px) {
+  .descriptions-grid { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .desc-card { padding: 0.7rem 0.8rem; }
 }

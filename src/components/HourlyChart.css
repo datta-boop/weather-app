@@ -1,0 +1,69 @@
+.hourly-chart {
+  width: 100%;
+}
+
+.chart-scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.2) transparent;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 0.5rem;
+  backdrop-filter: blur(15px);
+}
+
+.chart-svg {
+  width: 100%;
+  min-width: 600px;
+  display: block;
+}
+
+.hourly-cards-row {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.6rem 0 0.2rem;
+  scrollbar-width: none;
+}
+.hourly-cards-row::-webkit-scrollbar { display: none; }
+
+.hourly-mini-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 0.6rem 0.8rem;
+  min-width: 70px;
+  backdrop-filter: blur(15px);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+.hourly-mini-card:hover { transform: translateY(-2px); }
+
+.hmc-time {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.hmc-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.hmc-temp {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.hmc-humid {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
