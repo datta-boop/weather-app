@@ -1,0 +1,52 @@
+.weather-map-container {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(15px);
+}
+
+.map-layer-controls {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.7rem;
+  background: var(--card-bg);
+  flex-wrap: wrap;
+}
+
+.map-layer-btn {
+  background: var(--btn-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 50px;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: inherit;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  backdrop-filter: blur(10px);
+}
+.map-layer-btn:hover  { background: var(--btn-hover); color: var(--text-primary); }
+.map-layer-btn.active { background: var(--weather-primary); color: #fff; border-color: var(--weather-primary); }
+
+.leaflet-map-div {
+  height: 380px;
+  width: 100%;
+}
+
+.map-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 3rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  background: var(--card-bg);
+}
+.map-fallback span { font-size: 3rem; }
+
+@media (max-width: 600px) {
+  .leaflet-map-div { height: 280px; }
+}
